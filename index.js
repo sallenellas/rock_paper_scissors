@@ -1,74 +1,52 @@
-//Creating Variables
-const variables = ['rock', 'paper', 'scissors']
 
-//Creating Prompt
-let userChoice = prompt("Type 'R' for rock, 'P' for paper, or 'S' scissors?").toLowerCase();
 
-//Testing If User Input Is Captured Properly
-// if (userChoice === 'r'){
-//     alert("0")
-// }
-// else if (userChoice === 'p'){
-//     alert("1")
-// }
-// else if (userChoice === 's'){
-//     alert("2")
-// }
-// else{
-//     alert("Invalid Input")
-// };
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 
-//Computer Choice Function
-function randomChoice(choices) {
-    let index = Math.floor(Math.random() * choices.length)
-    return choices[index][0];
+const buttons = document.querySelectorAll('button');
+
+
+const getComputerChoice = () => {
+    let choices = ['rock', 'paper', 'scissors'];
+    return choices[Math.floor(Math.random() * choices.length)];
 }
 
-computerChoice = randomChoice(variables);
+const getPlayerChoice = () => {
+    
+    let playerChoice;
 
-console.log(computerChoice);
+    rock.addEventListener('click', () => {
+        playerChoice = rock.value;
+    });
+    paper.addEventListener('click', () => {
+        playerChoice = paper.value;
+    });
+    scissors.addEventListener('click', () => {
+        playerChoice = scissors.value;
+    });
 
-// Tracking Wins/Losses
-let wins = 0
-let losses = 0
+    return playerChoice;
+}
 
-// Game Functionality
-if (userChoice === 'r'){
-    if (computerChoice === 'p'){
-        alert('You Lose')
-        losses += 1
-    }
-    else if (computerChoice = 's'){
-        alert('You Win')
-        wins += 1
-    }
-    else{
-        alert("It's a Draw")
-    }
-}
-else if (userChoice === 'p'){
-    if (computerChoice === 's'){
-        alert('You Lose')
-        losses += 1
-    }
-    else if (computerChoice = 'r'){
-        alert('You Win')
-        wins += 1
-    }
-    else{
-        alert("It's a Draw")
-    }
-}
-else if (userChoice === 's'){
-    if (computerChoice === 'r'){
-        alert('You Lose')
-        losses += 1
-    }
-    else if (computerChoice = 'p'){
-        alert('You Win')
-        wins += 1
-    }
-    else{
-        alert("It's a Draw")
-    }
-}
+
+
+// button.addEventListener('click', () => {
+//     let playerChoice;
+//     switch(button.id){
+//         case 'rock':
+//             console.log('rock');
+//             break;
+//         case 'paper':
+//             console.log('pape');
+//             break;
+//         case 'scissors':
+//             console.log('scissors');
+//             break;
+//     }
+// });
+
+
+console.log(getComputerChoice());
+
+console.log(getPlayerChoice());
