@@ -1,52 +1,106 @@
+const buttons = document.querySelector('.buttons');
+const results = document.querySelector('.results');
+const playerScore = document.querySelector('.playerScore');
+const computerScore = document.querySelector('.computerScore');
 
+var playerPoints = 0;
+var computerPoints = 0;
 
-const rock = document.querySelector('#rock');
-const paper = document.querySelector('#paper');
-const scissors = document.querySelector('#scissors');
+const scoreboard = (playerChoice, computerChoice) => {
 
-const buttons = document.querySelectorAll('button');
+    switch (playerChoice){
+        case('rock'):
+        if (computerChoice === 'rock'){
+            results.innerText = "It's A Tie";
+        }
+        else if (computerChoice === 'paper'){
+            results.innerText = `You Lose! ${computerChoice.toUpperCase()} beats ${playerChoice.toUpperCase()}`;
+            computerPoints++;
+        }
+        else{
+            results.innerText = `You Win! ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}`;
+            playerPoints++;
+        }
+        break;
+        case('paper'):
+        if (computerChoice === 'paper'){
+            results.innerText = "It's A Tie";
+        }
+        else if (computerChoice === 'scissors'){
+            results.innerText = `You Lose! ${computerChoice.toUpperCase()} beats ${playerChoice.toUpperCase()}`;
+            computerPoints++;
+        }
+        else{
+            results.innerText = `You Win! ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}`;
+            playerPoints++;
+        }
+        break;
+        case('scissors'):
+        if (computerChoice === 'scissors'){
+            results.innerText = "It's A Tie";
+        }
+        else if (computerChoice === 'rock'){
+            results.innerText = `You Lose! ${computerChoice.toUpperCase()} beats ${playerChoice.toUpperCase()}`;
+            computerPoints++;
+        }
+        else{
+            results.innerText = `You Win! ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}`;
+            playerPoints++;
+        }
+        break;
+    }
+    playerScore.innerText = `Player: ${playerPoints}`;
+    computerScore.innerText = `Computer: ${computerPoints}`;
 
+}
 
 const getComputerChoice = () => {
     let choices = ['rock', 'paper', 'scissors'];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-const getPlayerChoice = () => {
+
+buttons.addEventListener('click', (e) => {
+    let player = e.target.value;
+    console.log(player);
+    let computer = getComputerChoice();
+    console.log(computer);
+    scoreboard(player, computer);
+
+    // switch (playerChoice){
+    //     case('rock'):
+    //     if (computerChoice === 'rock'){
+    //         results.innerText = "It's A Tie";
+    //     }
+    //     else if (computerChoice === 'paper'){
+    //         results.innerText = `You Lose! ${computerChoice.toUpperCase()} beats ${playerChoice.toUpperCase()}`;
+    //     }
+    //     else{
+    //         results.innerText = `You Win! ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}`;
+    //     }
+    //     break;
+    //     case('paper'):
+    //     if (computerChoice === 'paper'){
+    //         results.innerText = "It's A Tie";
+    //     }
+    //     else if (computerChoice === 'scissors'){
+    //         results.innerText = `You Lose! ${computerChoice.toUpperCase()} beats ${playerChoice.toUpperCase()}`;
+    //     }
+    //     else{
+    //         results.innerText = `You Win! ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}`;
+    //     }
+    //     break;
+    //     case('scissors'):
+    //     if (computerChoice === 'scissors'){
+    //         results.innerText = "It's A Tie";
+    //     }
+    //     else if (computerChoice === 'rock'){
+    //         results.innerText = `You Lose! ${computerChoice.toUpperCase()} beats ${playerChoice.toUpperCase()}`;
+    //     }
+    //     else{
+    //         results.innerText = `You Win! ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}`;
+    //     }
+    //     break;
+        
     
-    let playerChoice;
-
-    rock.addEventListener('click', () => {
-        playerChoice = rock.value;
-    });
-    paper.addEventListener('click', () => {
-        playerChoice = paper.value;
-    });
-    scissors.addEventListener('click', () => {
-        playerChoice = scissors.value;
-    });
-
-    return playerChoice;
-}
-
-
-
-// button.addEventListener('click', () => {
-//     let playerChoice;
-//     switch(button.id){
-//         case 'rock':
-//             console.log('rock');
-//             break;
-//         case 'paper':
-//             console.log('pape');
-//             break;
-//         case 'scissors':
-//             console.log('scissors');
-//             break;
-//     }
-// });
-
-
-console.log(getComputerChoice());
-
-console.log(getPlayerChoice());
+});
