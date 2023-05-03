@@ -94,7 +94,7 @@ button {
     box-shadow: 1px 1px 5px var(--color1);
 }
 
-.secton_1:hover, .playerScore:hover, .computerScore:hover,
+.title:hover, .playerScore:hover, .computerScore:hover,
 .playerChoice:hover, .computerChoice:hover, .results:hover, button:hover{
     color: var(--color5);
     cursor: pointer;
