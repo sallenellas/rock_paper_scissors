@@ -4,34 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cinzel&family=Fontdiner+Swanky&family=Frijole&family=Gajraj+One&family=Goldman&family=Kameron&family=Rubik+Dirt&family=Rubik+Wet+Paint&family=Saira:ital,wght@1,200&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <div class="container">
 
-        <div> <!-- Title-->
-            Choose Your Weapon
-        </div>
+        <div class="section_1">
 
-        <div class="scores"> <!-- Results div-->
-            <div class="playerScore">
 
-            </div>
-            <div class="computerScore">
-
+            <div class="title hover"> <!-- Title-->
+                Choose Your Weapon
             </div>
         </div>
-
-
-        <div class="buttons"> <!-- Buttons div -->
-            <button type="button" value="rock" id="rock">Rock</button>
-            <button type="button" value="paper" id="paper">Paper</button>
-            <button type="button" value="scissors" id="scissors">Scissors</button>
+        
+        <div class="section_2">
+            
+            <div class="buttons"> <!-- Buttons div -->
+                <button type="button" value="rock" id="rock">ROCK</button>
+                <button type="button" value="paper" id="paper">PAPER</button>
+                <button type="button" value="scissors" id="scissors">SCISSORS</button>
+            </div>
         </div>
 
-        <div class="results"> <!-- Score div -->
-            (Score)
+        <div class="section_3">
+            <div class="playerChoice">
+                You Chose: 0
+            </div>
+            <div class="computerChoice">
+                Compuer Chose: 0
+            </div>
+            <div class="results"> <!-- Results div -->
+            </div>
+        </div>
+
+        <div class="section_4">
+            <div class="scores"> <!-- Scoreboard div-->
+                <div class="playerScore">
+                    Player: 0
+                </div>
+                <div class="computerScore">
+                    Computer: 0
+                </div>
+            </div>
         </div>
 
     </div>

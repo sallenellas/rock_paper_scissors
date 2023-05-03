@@ -1,9 +1,64 @@
+:root {
+    --font1: 'Frijole', cursive;
+    --font2: 'Rubik Dirt', cursive;
+    --font3: 'Fontdiner Swanky', cursive;
+    --font4: 'Goldman', cursive;
+    /* --font3: var('Gajraj One', cursive;); */
+    --color1: #705994;
+    --color2: #9260E0;
+    --color3: #B587FF;
+    --color4: #948F22;
+    --color5: #E0DB60;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: var(--font4);
+    background-color: var(--color2);
+}
+
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 12px;
+    margin-left: 24px;
+    margin-right: 24px;
+    gap: 48px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    align-items: center;
+    color: var(--color3);
+    text-shadow: 1px 1px 5px var(--color3);
+}
+
+.section_3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    color: var(--color3);
+    text-shadow: 1px 1px 5px var(--color3);
+}
+
+.computerChoice {
+    margin-bottom: 12px;
+}
+
+.section_4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
 }
 
 .scores {
@@ -12,4 +67,45 @@
     justify-content: space-between;
     align-items: center;
     gap: 50px;
+    color: var(--color3);
+    text-shadow: 1px 1px 5px var(--color3);
+    margin-bottom: 12px;
+}
+
+#rock {
+    font-family: var(--font1);
+}
+
+#paper{
+    font-family: var(--font2);
+}
+
+#scissors {
+    font-family: var(--font3);
+}
+
+button {
+    width: 100px;
+    height: 33px;
+    color: var(--color4);
+    background-color: var(--color3);
+    border-radius: 10px;
+    border-color: var(--color3);
+    box-shadow: 1px 1px 5px var(--color1);
+}
+
+.secton_1:hover, .playerScore:hover, .computerScore:hover,
+.playerChoice:hover, .computerChoice:hover, .results:hover, button:hover{
+    color: var(--color5);
+    cursor: pointer;
+}
+
+button:active {
+    background-color: var(--color2);
+    border-color: var(--color2);
+}
+
+button:hover{
+    background-color: var(--color2);
+    border-color: var(--color5);
 }

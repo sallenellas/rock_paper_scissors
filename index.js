@@ -2,6 +2,8 @@ const buttons = document.querySelector('.buttons');
 const results = document.querySelector('.results');
 const playerScore = document.querySelector('.playerScore');
 const computerScore = document.querySelector('.computerScore');
+const pChoice = document.querySelector('.playerChoice');
+const cChoice = document.querySelector('.computerChoice');
 
 var playerPoints = 0;
 var computerPoints = 0;
@@ -49,6 +51,8 @@ const scoreboard = (playerChoice, computerChoice) => {
         }
         break;
     }
+    pChoice.innerText = `You Chose: ${playerChoice.toUpperCase()}`;
+    cChoice.innerText = `Computer Chose: ${computerChoice.toUpperCase()}`;
     playerScore.innerText = `Player: ${playerPoints}`;
     computerScore.innerText = `Computer: ${computerPoints}`;
 
